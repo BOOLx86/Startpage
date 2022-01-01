@@ -18,10 +18,7 @@
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 
-	color: var(--fg);
-	background-color: var(--bg);
-
-	/* transition: background 0.25s ease-in-out, color 0.5s ease-in-out; */
+	transition: background-color 0.25s ease-out, color 0.05s ease-out;
 }
 
 body {
@@ -31,6 +28,11 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	flex-direction: column;
+
+	color: var(--fg);
+	background-color: var(--bg);
 }
 
 :root {
@@ -42,12 +44,11 @@ body {
 	--shadow: rgba( 0, 0, 0, 20%);
 }
 
-.theme_dark {
+.dark_theme {
 	--bg: #19171a;
 	--fg: #d8dee9;
 	
 	--sbg: black;
 	
-	--accent: #61b0f1;
 	--shadow: rgba( 255, 255, 255, 20%);
 }

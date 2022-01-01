@@ -1,13 +1,14 @@
 <script>
-	
+	import Clock from "./Widgets/Clock.svelte";
+	import ThemeButton from "./Widgets/ThemeButton.svelte";
+
 </script>
 
-<main>
-	<h1>
-		Test
-	</h1>
-</main>
+<svelte:head>
+	<script src="https://kit.fontawesome.com/4b82fb354c.js" crossorigin="anonymous"></script>
 
-<style>
-	
-</style>
+</svelte:head>
+
+
+<ThemeButton/>
+<Clock/>

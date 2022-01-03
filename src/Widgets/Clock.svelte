@@ -15,7 +15,7 @@
 
 <style>
     #clock {
-        font-size: 14vh;
+        font-size: 10em;
         font-weight: bold;
     }
     

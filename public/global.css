@@ -1,3 +1,5 @@
+@import "../themes.css";
+
 @font-face {
     font-family: 'Open Sans';
     font-weight: bold;
@@ -33,22 +35,4 @@ body {
 
 	color: var(--fg);
 	background-color: var(--bg);
-}
-
-:root {
-	--bg: #f5f5f5;
-	--fg: #3a3a3a;
-	
-	--sbg: white;
-
-	--shadow: rgba( 0, 0, 0, 20%);
-}
-
-.dark_theme {
-	--bg: #19171a;
-	--fg: #d8dee9;
-	
-	--sbg: black;
-	
-	--shadow: rgba( 255, 255, 255, 20%);
 }

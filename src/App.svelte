@@ -1,7 +1,7 @@
 <script>
 	import Clock from "./Widgets/Clock.svelte";
 	import ThemeButton from "./Widgets/ThemeButton.svelte";
-
+	import SearchBar from "./Widgets/SearchBar.svelte";
 </script>
 
 <svelte:head>

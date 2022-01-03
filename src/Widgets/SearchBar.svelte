@@ -24,6 +24,7 @@
         border: 1px solid transparent;
         border-radius: 10px;
         background-color: var(--sbg);
+        isolation:isolate; /* why not working? */
         box-shadow: 0px 0px 3px 0px var(--shadow);
     }
 

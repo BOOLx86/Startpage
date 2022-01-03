@@ -1,39 +1,42 @@
 <script>
-    let icon_class = 'far fa-moon'
+    const themes = [
+        { 'class': "light",     'icon': "far fa-sun"    },
+        { 'class': "dark",      'icon': "far fa-moon"   },
+        { 'class': "neon",      'icon': "far fa-image"  }
+    ]
+    
+    // load theme or set to default
+    let theme = localStorage.getItem('theme') === null? localStorage.getItem('theme') : themes[0];
+    localStorage.setItem('theme', theme);
+    
+    // initial apply theme
+    let icon = theme.icon;
+    document.body.classList.add('theme');
+    document.body.classList.add(theme.class);
 
-    /* if theme was never saved, set default theme (light) */
-    let theme = localStorage.getItem('theme') || 'light';
+    // set index to corresponding place in 'themes', or to -1 if not in there
+    let index = -1;
+    for (let i in themes) {
+        if (themes[i].class = theme.class) { index = i; break; }
+    }
 
-    apply_theme();
+    function apply_theme() {
+        for (let i in themes) { document.body.classList.remove(themes[i].class); } // clear previous theme
 
-    function toggle_theme() {
-        theme = (theme == 'light')? 'dark' : 'light';
+        icon = theme.icon;
+        document.body.classList.add(theme.class);
+    }
+
+    function switch_theme() {
+        theme = themes[++index % themes.length]; // cycle between themes
         localStorage.setItem('theme', theme);
 
         apply_theme();
     };
-
-    function apply_theme() {
-        switch (theme) {
-            case 'dark':
-                document.body.classList.add('dark_theme');
-                icon_class = 'far fa-sun';
-                break;
-
-            case 'light':
-                document.body.classList.remove('dark_theme');
-                icon_class = 'far fa-moon';
-                break;
-        
-            default:
-                break;
-        }
-    }
-
 </script>
 
 
-<i on:click="{toggle_theme}" id="theme_button" class={icon_class}></i>
+<i on:click="{switch_theme}" id="theme_button" class={icon}></i>
 
 <style>
     #theme_button {
@@ -42,7 +45,6 @@
         right: 0;
         margin: 1em;
 
-        font-size: 30px;
+        font-size: 1.5em;
     }
-    
 </style>
